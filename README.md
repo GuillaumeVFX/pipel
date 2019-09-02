@@ -4,6 +4,9 @@ pipel mean Pipeline and I plan to transmit and get collaboration to create an op
 
 ## Clarisse Pipeline
 
+### --@Vision for Clarisse Pipeline
+* It is possible to connect remotely and send command to clarisse
+
 ### Setup
 
 ```sh
