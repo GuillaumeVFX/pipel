@@ -1,0 +1,1 @@
+ix.application.copy(True) # Copy including external dependencies

@@ -1,0 +1,11 @@
+menu = ix.application.get_main_menu()
+
+menu.add_command("Help>Clarisse Help...", "./clarisse_help.py", "f1")
+menu.add_command("Help>Learn Clarisse...", "./learn_clarisse.py") 
+menu.add_command("Help>separator")
+menu.add_command("Help>Log Statistics", "./log_statistics.py", "ctrl+shift+f1")
+menu.add_command("Help>Log OIIO Statistics", "./log_OIIO_statistics.py")
+menu.add_command("Help>Log OSL Statistics", "./log_OSL_statistics.py")
+menu.add_command("Help>separator")
+menu.add_command("Help>Release Note...", "./release_notes.py")
+menu.add_command("Help>About...", "./about.py")

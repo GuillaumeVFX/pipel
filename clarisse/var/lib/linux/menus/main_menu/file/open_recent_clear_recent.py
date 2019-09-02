@@ -1,0 +1,1 @@
+ix.application.clear_recent_files("project")
