@@ -14,4 +14,4 @@ rclarisse.run('print "This is great I can send stuff to my clarisse :) wow that 
 
 #  @a Creating a Sphere
 rclarisse.run('ix.cmds.CreateObject("polysphere_created_remotely", "GeometryPolysphere")')
-
+ix.cmds.DisableItems(["project://scene/polysphere_created_remotely"], True)
