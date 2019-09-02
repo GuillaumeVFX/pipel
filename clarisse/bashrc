@@ -1,0 +1,2 @@
+# Add this to ~/.bashrc
+export PYTHONPATH="${PYTHONPATH}:/opt/clarisse/python/"
