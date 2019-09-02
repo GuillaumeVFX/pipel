@@ -17,3 +17,8 @@ export PYTHONPATH="${PYTHONPATH}:/opt/clarisse/python/"
 export PYTHONPATH="${PYTHONPATH}:/c/Program\ Files/Isotropix/Clarisse\ iFX\ 4.0\ SP3/Clarisse/python/"
 ```
 
+
+
+# Resources
+
+* https://www.clarissewiki.com/4.0/sdk/using_the_command_port.html
