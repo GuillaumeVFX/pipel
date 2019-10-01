@@ -3,6 +3,11 @@ pipel mean Pipeline and I plan to transmit and get collaboration to create an op
 
 ----
 
+## Wordpress Pipeline
+* --@STCGoal Wordpress is used as a framework to create the Pipel Web Access
+* [wordpress/README.md](wordpress/README.md)
+
+
 ## Clarisse Pipeline
 
 ### --@Vision for Clarisse Pipeline
