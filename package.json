@@ -1,0 +1,23 @@
+{
+  "name": "pipel",
+  "version": "0.0.1",
+  "description": "pipel mean Pipeline and I plan to transmit and get collaboration to create an optimal pipeline for creating VFX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumeVFX/pipel.git"
+  },
+  "keywords": [
+    "vfx",
+    "pipeline"
+  ],
+  "author": "Guillaume Descoteaux-Isabelle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuillaumeVFX/pipel/issues"
+  },
+  "homepage": "https://github.com/GuillaumeVFX/pipel#readme"
+}
