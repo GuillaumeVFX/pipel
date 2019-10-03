@@ -4,7 +4,9 @@
   "description": "pipel mean Pipeline and I plan to transmit and get collaboration to create an optimal pipeline for creating VFX",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "repo":"gixb https://github.com/GuillaumeVFX/pipel",
+    "browse":"npm run repo"
   },
   "repository": {
     "type": "git",
