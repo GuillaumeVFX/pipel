@@ -4,3 +4,6 @@ page:.*\n
 ```
 
 
+```regex remove color
+color:.*\n
+```
