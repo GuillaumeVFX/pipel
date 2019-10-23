@@ -81,7 +81,7 @@ void loop() {
      flag = analogRead(A4);
     if (flag> 400) { 
      Mouse.move(circonference, circonference, 0);
-      if (!Mouse.isPressed(MOUSE_LEFT)) {
+      if (!Mouse.     ssed(MOUSE_LEFT)) {
       Mouse.press(MOUSE_LEFT);
      delay(circling);
       Mouse.release(MOUSE_LEFT);
@@ -133,14 +133,14 @@ void loop() {
   // if the mouse button is pressed:
   if (clickState == HIGH) {
     // if the mouse is not pressed, press it:
-    if (!Mouse.isPressed(MOUSE_LEFT)) {
+    if (!Mouse.isPressed(MOUSE_LEFT)) 
       Mouse.press(MOUSE_LEFT);
     }
   }
   // else the mouse button is not pressed:
   else {
     // if the mouse is pressed, release it:
-    if (Mouse.isPressed(MOUSE_LEFT)) {
+    if (Mouse.isPressed(MOUSE_LEFT)) 
       Mouse.release(MOUSE_LEFT);
     }
   }
