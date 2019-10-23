@@ -81,7 +81,7 @@ void loop() {
      flag = analogRead(A4);
     if (flag> 400) { 
      Mouse.move(circonference, circonference, 0);
-      if (!Mouse.     ssed(MOUSE_LEFT)) {
+      
       Mouse.press(MOUSE_LEFT);
      delay(circling);
       Mouse.release(MOUSE_LEFT);
@@ -89,14 +89,14 @@ void loop() {
 
      flag = analogRead(A4);
      if (flag> 400) { Mouse.move(0, circonferenceBack, 0);
-      if (!Mouse.isPressed(MOUSE_LEFT)) {
+      
       Mouse.press(MOUSE_LEFT);
      delay(circling);
       Mouse.release(MOUSE_LEFT);
      }
 
      flag = analogRead(A4);
-    if (flag> 400) {  Mouse.move(circonferenceBack, 0, 0); if (!Mouse.isPressed(MOUSE_LEFT)) {
+    if (flag> 400) {  Mouse.move(circonferenceBack, 0, 0); 
       Mouse.press(MOUSE_LEFT);
      delay(circling);
       Mouse.release(MOUSE_LEFT);
@@ -113,7 +113,7 @@ void loop() {
   } 
   else { //stuff of the sample
     
-  
+  /*
   // read the buttons:
   int upState = digitalRead(upButton);
   int downState = digitalRead(downButton);
@@ -140,11 +140,12 @@ void loop() {
   // else the mouse button is not pressed:
   else {
     // if the mouse is pressed, release it:
-    if (Mouse.isPressed(MOUSE_LEFT)) 
+    if (Mouse.isPressed(MOUSE_LEFT)) {
       Mouse.release(MOUSE_LEFT);
     }
   }
 
+    */
     }
   // a delay so the mouse doesn't move too fast:
   delay(responseDelay);
