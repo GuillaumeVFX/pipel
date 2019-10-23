@@ -38,6 +38,7 @@ int range = 5;              // output range of X or Y movement; affects movement
 int responseDelay = 10;     // response delay of the mouse, in ms
 
 int circonference = 40;
+int circonferenceBack = -40;
 
 void setup() {
   delay(1200);
@@ -59,7 +60,7 @@ void setup() {
   Serial.print("Started ");
 }
 bool f = true;
-
+int circling = 3000;
 void loop() {
  digitalWrite(13,HIGH);
  delay(500);
@@ -76,23 +77,37 @@ void loop() {
     //login when pin 3 is HIGH, we want to Focus render on where the mouse is
     //First iteration will just hold pressed the button and move the mouse around 20-50 pixel in circle
      digitalWrite(13,HIGH);
+     
+     flag = analogRead(A4);
+    if (flag> 400) { 
      Mouse.move(circonference, circonference, 0);
-     delay(5000);
-
-     flag = analogRead(A4);
-     if (flag> 400) { Mouse.move(0, -circonference, 0);
-     delay(5000);
-     }
-
-     flag = analogRead(A4);
-    if (flag> 400) {  Mouse.move(-circonference, 0, 0);
-     delay(5000);
+      if (!Mouse.isPressed(MOUSE_LEFT)) {
+      Mouse.press(MOUSE_LEFT);
+     delay(circling);
+      Mouse.release(MOUSE_LEFT);
     }
 
      flag = analogRead(A4);
-      if (flag> 400) { Mouse.move(0, -circonference, 0);
-     delay(5000);
+     if (flag> 400) { Mouse.move(0, circonferenceBack, 0);
+      if (!Mouse.isPressed(MOUSE_LEFT)) {
+      Mouse.press(MOUSE_LEFT);
+     delay(circling);
+      Mouse.release(MOUSE_LEFT);
+     }
+
+     flag = analogRead(A4);
+    if (flag> 400) {  Mouse.move(circonferenceBack, 0, 0); if (!Mouse.isPressed(MOUSE_LEFT)) {
+      Mouse.press(MOUSE_LEFT);
+     delay(circling);
+      Mouse.release(MOUSE_LEFT);
+    }
+    else{
+        
+     
+      
       }
+
+
      digitalWrite(13,LOW);
    }
   } 
