@@ -80,12 +80,12 @@ void loop() {
    digitalWrite(13,HIGH);
 
    int x = circonference;
-   int y = circonference;
+   int y = 0;
    
    mover(x,y);
    
     x = 0;
-    y = circonferenceBack;
+    y = circonference;
     
    mover(x,y);
    
@@ -94,7 +94,7 @@ void loop() {
     
    mover(x,y);
 
-    x = circonferenceBack;
+    x = 0;
     y = circonferenceBack;
     
    mover(x,y);
