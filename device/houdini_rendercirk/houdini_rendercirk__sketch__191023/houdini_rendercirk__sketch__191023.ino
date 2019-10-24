@@ -37,8 +37,9 @@ const int mouseButton = 6;
 int range = 5;              // output range of X or Y movement; affects movement speed
 int responseDelay = 10;     // response delay of the mouse, in ms
 
-int circonference = 40;
-int circonferenceBack = -40;
+int circonference = 20;
+int circonferenceBack = -20;
+int delayInnerMoveMultiplier =2;
 
 void setup() {
   delay(1200);
@@ -59,97 +60,68 @@ void setup() {
   Mouse.begin();
   Serial.print("Started ");
 }
-bool f = true;
+int flag = 0;
+
 int circling = 3000;
 void loop() {
- digitalWrite(13,HIGH);
+ //digitalWrite(13,HIGH);
  delay(500);
-  if (f)
-  {
-    Serial.print(".");
-    int flag = analogRead(A4);
-    Serial.print(flag);
+
+ // Serial.print(".");
+  flag = analogRead(A4);
+ // Serial.print(flag);
+  
+ if (flag> 400)
+ {
+  
+  Serial.print(":\n");
+  //login when pin 3 is HIGH, we want to Focus render on where the mouse is
+  //First iteration will just hold pressed the button and move the mouse around 20-50 pixel in circle
+   digitalWrite(13,HIGH);
+
+   int x = circonference;
+   int y = circonference;
+   
+   mover(x,y);
+   
+    x = 0;
+    y = circonferenceBack;
     
-   if (flag> 400)
-   {
+   mover(x,y);
+   
+    x = circonferenceBack;
+    y = 0;
     
-    Serial.print(":\n");
-    //login when pin 3 is HIGH, we want to Focus render on where the mouse is
-    //First iteration will just hold pressed the button and move the mouse around 20-50 pixel in circle
-     digitalWrite(13,HIGH);
-     
-     flag = analogRead(A4);
-    if (flag> 400) { 
-     Mouse.move(circonference, circonference, 0);
-      
-      Mouse.press(MOUSE_RIGHT);
-     delay(circling);
-      Mouse.release(MOUSE_RIGHT);
-    }
+   mover(x,y);
 
-     flag = analogRead(A4);
-     if (flag> 400) { Mouse.move(0, circonferenceBack, 0);
-      
-      Mouse.press(MOUSE_RIGHT);
-     delay(circling);
-      Mouse.release(MOUSE_RIGHT);
-     }
-
-     flag = analogRead(A4);
-    if (flag> 400) {  Mouse.move(circonferenceBack, 0, 0); 
-      Mouse.press(MOUSE_RIGHT);
-     delay(circling);
-      Mouse.release(MOUSE_RIGHT);
-    }
-    else{
-        
-     
-      
-      }
-
-
-     digitalWrite(13,LOW);
-   }
-  } 
-  else { //stuff of the sample
+    x = circonferenceBack;
+    y = circonferenceBack;
     
-  /*
-  // read the buttons:
-  int upState = digitalRead(upButton);
-  int downState = digitalRead(downButton);
-  int rightState = digitalRead(rightButton);
-  int leftState = digitalRead(leftButton);
-  int clickState = digitalRead(mouseButton);
+   mover(x,y);
 
-  // calculate the movement distance based on the button states:
-  int  xDistance = (leftState - rightState) * range;
-  int  yDistance = (upState - downState) * range;
 
-  // if X or Y is non-zero, move:
-  if ((xDistance != 0) || (yDistance != 0)) {
-    Mouse.move(xDistance, yDistance, 0);
-  }
 
-  // if the mouse button is pressed:
-  if (clickState == HIGH) {
-    // if the mouse is not pressed, press it:
-    if (!Mouse.isPressed(MOUSE_LEFT)) 
-      Mouse.press(MOUSE_LEFT);
-    }
-  }
-  // else the mouse button is not pressed:
-  else {
-    // if the mouse is pressed, release it:
-    if (Mouse.isPressed(MOUSE_LEFT)) {
-      Mouse.release(MOUSE_LEFT);
-    }
-  }
+   digitalWrite(13,LOW);
 
-    */
-    }
   // a delay so the mouse doesn't move too fast:
   delay(responseDelay);
   
      digitalWrite(13,LOW);
+ }
+
   delay(responseDelay);
+}
+
+int mover(int x,int y)
+{
+  
+     flag = analogRead(A4);
+    if (flag> 400) { 
+     Mouse.move(x, y, 0);
+      
+      Mouse.press(MOUSE_RIGHT);
+     delay(circling * delayInnerMoveMultiplier);
+      Mouse.release(MOUSE_RIGHT);
+    }
+
 }
