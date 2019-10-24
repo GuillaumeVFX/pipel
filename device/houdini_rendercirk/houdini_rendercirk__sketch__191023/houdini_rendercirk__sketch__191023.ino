@@ -82,24 +82,24 @@ void loop() {
     if (flag> 400) { 
      Mouse.move(circonference, circonference, 0);
       
-      Mouse.press(MOUSE_LEFT);
+      Mouse.press(MOUSE_RIGHT);
      delay(circling);
-      Mouse.release(MOUSE_LEFT);
+      Mouse.release(MOUSE_RIGHT);
     }
 
      flag = analogRead(A4);
      if (flag> 400) { Mouse.move(0, circonferenceBack, 0);
       
-      Mouse.press(MOUSE_LEFT);
+      Mouse.press(MOUSE_RIGHT);
      delay(circling);
-      Mouse.release(MOUSE_LEFT);
+      Mouse.release(MOUSE_RIGHT);
      }
 
      flag = analogRead(A4);
     if (flag> 400) {  Mouse.move(circonferenceBack, 0, 0); 
-      Mouse.press(MOUSE_LEFT);
+      Mouse.press(MOUSE_RIGHT);
      delay(circling);
-      Mouse.release(MOUSE_LEFT);
+      Mouse.release(MOUSE_RIGHT);
     }
     else{
         
